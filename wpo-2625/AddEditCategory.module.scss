@@ -1,0 +1,106 @@
+@import '../../../assets/styles/variables/index';
+@import '../../../assets/styles/mixins/index';
+@import '../../../assets/styles/functions/index';
+
+$buttonPath: '../../../assets/styles/composers/_buttons.scss';
+$formPath: '../../../assets/styles/composers/_form.scss';
+$generalPath: '../../../assets/styles/base/_generals.scss';
+$caretPath: '../../../assets/styles/composers/_caret.scss';
+
+.labelField {
+  composes: label from $formPath;
+  margin-bottom: 0;
+  margin-right: remify(10);
+}
+
+.labelDetails {
+  composes: label from $formPath;
+  color: $secondaryColor;
+}
+
+.actionLink {
+  composes: actionLink from $generalPath;
+  padding: 0;
+}
+
+.buttonCancel {
+  composes: cancelButton from $buttonPath;
+}
+
+.buttonSave {
+  composes: submitButton from $buttonPath;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+
+  &Large {
+    width: remify(450);
+  }
+}
+
+.categoryRow {
+  margin: 0 remify(-30);
+  padding: remify(10) remify(30);
+  background-color: $tableBg;
+}
+
+.subjectRow {
+  margin: 0 remify(-30);
+  padding: remify(10) remify(55);
+  background-color: rgba(0, 190, 210, .15);
+}
+
+.border {
+  height: remify(2);
+  background: $fourthColor;
+}
+
+.selectProject {
+  width: remify(650);
+}
+
+.selectProjectLabel {
+  width: calc(100% - 6rem);
+}
+
+.textareaWidth {
+  width: calc(100% - 5.4rem);
+}
+
+.statusWrapper {
+  margin-left: remify(20);
+}
+
+.collapseBtn {
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: $secondaryColor;
+  align-self: flex-end;
+}
+
+.hideLabels {
+  display: none;
+}
+
+.caretUp {
+  composes: caretUp from $caretPath;
+}
+
+.caretDown {
+  composes: caretDown from $caretPath;
+}
+
+.deleteIcon {
+  cursor: pointer;
+  width: remify(20);
+  height: remify(25);
+  fill: $alertColor;
+  margin-left:remify(10);
+
+  &:hover {
+    fill: $activeColor
+  }
+}

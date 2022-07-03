@@ -1,0 +1,298 @@
+@import '../../../assets/styles/variables/index';
+@import '../../../assets/styles/mixins/index';
+@import '../../../assets/styles/functions/index';
+
+$generalPath: '../../../assets/styles/base/_generals.scss';
+$buttonsPath: '../../../assets/styles/composers/_buttons.scss';
+$textareaPath: '../../../assets/styles/composers/_textarea.scss';
+$formPath: '../../../assets/styles/composers/_form.scss';
+
+.translationWrapper {
+  padding: remify(20) remify(30) 0 remify(90);
+}
+
+.containerBoxed {
+  composes: containerBoxed from $generalPath;
+  position: relative;
+}
+
+.translationRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.translationColumn {
+  width: 49%;
+}
+
+.translatedReplyContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: remify(21);
+  background-color: $qualityColor;
+
+  @include desktopLarge {
+    padding: remify(18);
+  }
+}
+
+.svgStyle {
+  width: remify(50);
+  height: remify(50);
+  margin-right: remify(20);
+  fill: $primaryColor;
+
+  @include desktopLarge {
+    margin-right: remify(15);
+  }
+}
+
+.translatedReplySvg {
+  @include position(absolute, 50%, remify(16), null, null);
+  transform: translate(0, -50%);
+  width: remify(22);
+  height: remify(22);
+}
+
+.translatedReply {
+  font-size: remify(24);
+  font-weight: 500;
+  line-height: remify(28);
+
+  @include desktopLarge {
+    font-size: remify(22);
+  }
+
+  @include desktopMedium {
+    font-size: remify(18);
+  }
+}
+
+.translatedReplyText {
+  font-size: remify(18);
+  font-weight: 500;
+  line-height: remify(24);
+
+  @include desktopLarge {
+    font-size: remify(16);
+  }
+
+  @include desktopMedium {
+    font-size: remify(14);
+  }
+}
+
+.ticketNumber {
+  font-size: remify(16);
+  color: $white;
+}
+
+.ticketUrl {
+  max-width: 16rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: bottom;
+
+  @include desktopMedium {
+    max-width: 6.5rem;
+  }
+}
+
+.languages {
+  font-size: remify(16);
+  text-transform: uppercase;
+}
+
+.metadataContainer {
+  padding: 1rem 0 1rem remify(20);
+  border-top: .0625rem solid $borderColor1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.textareaWrapper {
+  composes: textareaWrapper from $textareaPath;
+  overflow: hidden;
+}
+
+.customTextarea {
+  composes: customTextarea from $textareaPath;
+  overflow-y: auto;
+  padding-right: 0;
+  width: 100%;
+  border: 0;
+  resize: none;
+  outline: none;
+}
+
+.originalReplyTextarea {
+  height: calc((100vh - 34.2rem) / 3 * 2);
+  // height: calc((100vh - 23rem) / 3 * 2);
+}
+
+.queryTextarea {
+  height: calc((100vh - 34.2rem) / 3);
+  color: $disabledTextDark;
+}
+
+.originalTextarea {
+  height: calc(100vh - 27.6rem);
+  // height: calc(100vh - 20.2rem);
+}
+
+.replyTextarea {
+  flex: 1;
+  color: $primaryColor;
+  padding-top: .5rem;
+}
+
+.buttonSubmit {
+  composes: submitButton from $buttonsPath;
+  margin-left: auto;
+  padding-left: remify(80);
+  padding-right: remify(80);
+}
+
+.buttonQuality {
+  composes: qualityButton from $buttonsPath;
+}
+
+.buttonReject {
+  composes: rejectButton from $buttonsPath;
+}
+
+.translationSetup {
+  @include flexMix(flex, null, space-between, center);
+  border-bottom: remify(1) solid $fourthColor;
+  background-color: $fourthColor;
+  color: $white;
+  padding: remify(10) remify(20);
+}
+
+.translationGuides {
+  flex-grow: 2;
+
+  @include flexMix(flex, null, flex-end, center);
+}
+
+.translationGuide {
+  margin-right: 1.1rem;
+  cursor: default;
+}
+
+.toneOfVoiceIcon,
+.guidelinesIcon {
+  fill: $white;
+  width: remify(20);
+  height: remify(23);
+  margin-right: remify(9);
+}
+
+.selectedLanguage {
+  display: inline-block;
+  min-width: remify(128);
+  margin-left: remify(10);
+}
+
+.tabHeader {
+  @include desktopLarge {
+    /* stylelint-disable */
+    padding: .5rem !important;
+    font-size: remify(15) !important;
+    /* stylelint-enable */
+  }
+}
+
+.tabsContent {
+  word-break: break-word;
+  border: remify(1) solid $fourthColor;
+  border-top: none;
+}
+
+.translationContainer {
+  height: calc(100vh - 23rem);
+  padding: .5rem remify(20);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.translatedContainer {
+  padding: remify(10) remify(20);
+  position: relative;
+}
+
+.translatedBorder {
+  border-bottom: remify(1) solid $fourthColor;
+}
+
+.translatedDetails {
+  font-weight: 500;
+  font-style: italic;
+  margin-bottom: .5rem;
+}
+
+.spinner {
+  top: remify(7);
+  left: remify(7);
+  position: absolute;
+}
+
+.label {
+  composes: label from $formPath;
+  display: block;
+}
+
+.metaTitle {
+  composes: label from $formPath;
+  font-size: remify(16);
+  margin-bottom: remify(3);
+}
+
+.responseMeta {
+  color: $secondaryColor;
+  font-size: remify(14);
+}
+
+.metaLabel {
+  font-weight: 500;
+  font-size: remify(14);
+}
+
+.subTitleBigThin {
+  composes: subTitleBigThin from $generalPath;
+}
+
+.underline {
+  composes: underline from $generalPath;
+}
+
+.translatedContainerProActive {
+  background-color: $disabledBackgroud;
+}
+
+.proActiveWrapper {
+  @include flexMix(flex, row, flex-start, flex-start);
+  opacity: .8;
+  margin-top: 1rem;
+  height: calc((100vh - 33.9rem) / 3);
+}
+
+.proActiveIcon {
+  fill: $secondaryColor;
+  margin-right: 1rem;
+}
+
+.proActiveTitle {
+  color: $primaryColor;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.proActiveInfo {
+  color: $secondaryColor;
+  font-style: italic;
+}

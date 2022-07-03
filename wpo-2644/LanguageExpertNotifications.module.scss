@@ -1,0 +1,73 @@
+@import '../../../assets/styles/variables/index';
+@import '../../../assets/styles/functions/index';
+@import '../../../assets/styles/mixins/index';
+
+$formPath : '../../../assets/styles/composers/_form.scss';
+
+.sectionWrapper {
+  max-width: remify(1300);
+}
+
+.disabledPair {
+  position: relative;
+  opacity: .5;
+
+  &::after {
+    @include position(absolute, 0, 0, 0, 0);
+    content: '';
+  }
+}
+
+.firstLine {
+  border-bottom: remify(1) solid $borderColor1;
+}
+
+.secondLine {
+  border-bottom: remify(1) solid $secondaryColor;
+}
+
+.label {
+  composes: label from $formPath;
+  margin-bottom: 0;
+  font-size: remify(16);
+}
+
+.icon {
+  fill: $secondaryColor;
+  margin-right: .5rem;
+
+  &Delete {
+    width: remify(20);
+    height: remify(25);
+  }
+
+  &Disabled {
+    width: remify(20);
+    height: remify(20);
+  }
+}
+
+.tooltip {
+  /* stylelint-disable */
+  background-color: $tooltipBackground !important;
+  font-size: remify(16) !important;
+  border-radius: .25rem !important;
+  /* stylelint-enable */
+  text-align: left;
+}
+
+.thresholdInput {
+  div{
+  display: flex;
+  justify-content: space-between;
+
+  label{
+    margin: auto;
+  }
+
+  input{
+    width: 70px;
+    margin-left: 10px;
+  }
+  }
+}

@@ -1,0 +1,95 @@
+@import '../../assets/styles/variables/index';
+@import '../../assets/styles/mixins/index';
+@import '../../assets/styles/functions/index';
+
+$generalPath: '../../assets/styles/base/_generals.scss';
+$buttonPath: '../../assets/styles/composers/_buttons.scss';
+$tablePath: '../../assets/styles/composers/_table.scss';
+$typographyPath: '../../assets/styles/composers/_typography.scss';
+
+.titleWrapper {
+  margin-bottom: remify(30);
+}
+
+.button {
+  composes: submitButton from $buttonPath;
+}
+
+.table {
+  composes: table from $generalPath;
+
+  thead {
+    th {
+      vertical-align: middle;
+      font-size: 1.15rem;
+      height: 3.11em;
+      white-space: nowrap;
+      padding-right: remify(8);
+      padding-left: remify(10);
+    }
+  }
+
+  td {
+    border-bottom-color: $thirdColor;
+    vertical-align: middle;
+    padding-right: remify(8);
+    padding-left: remify(8);
+  }
+
+  .numCol {
+    text-align: center;
+    min-width: 3rem;
+  }
+
+  .status {
+    color: $secondaryColor;
+
+    &Inactive {
+      color: $alertColor;
+    }
+  }
+}
+
+.userEmail {
+  composes: textEllipsis from $typographyPath;
+
+  @include desktopMedium {
+    max-width: 20rem;
+  }
+
+  @include desktopSmall {
+    max-width: 15rem;
+  }
+}
+
+.actionLink {
+  composes: actionLink from $generalPath;
+
+  &Alert {
+    composes: actionLinkAlert from $generalPath;
+  }
+
+  &Disabled {
+    color: $disabledText;
+    /* stylelint-disable */
+    cursor: no-drop !important;
+    /* stylelint-enable */
+
+    &:hover {
+      color: $disabledText;
+    }
+
+    &:focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.editColumnWrapper {
+  composes: editColumnWrapper from $tablePath;
+}
+
+.paginationConntainer {
+  display: flex;
+  justify-content: center;
+}

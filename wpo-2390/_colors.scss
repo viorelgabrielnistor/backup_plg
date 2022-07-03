@@ -1,0 +1,67 @@
+// Basic colors
+$white: #fff;
+$whiteTransparent: #fff8;
+
+$primaryColor: #004650;
+$secondaryColor: #007380;
+$thirdColor: #00465080;
+$thirdColorLight: #e0e9ea;
+$thirdColorLighter: #f7f7f7;
+$fourthColor: #00bed2;
+$fourthColorLight: #b3ebf1;
+$fourthColorLighter: #d9f5f8;
+$fifthColor: #eafbf9;
+
+// Custom colors
+$activeColor: #2ed8c3;
+$qualityColor: #ffb1b8;
+$qualityColorLight: #fdf3f4;
+$qualityColorLighter: #fef9fa;
+$rejectBackground: #cc32621a;
+$alertColor: #cc3262;
+$errorColor: #dc3545;
+$warningColor: #fa0;
+$warningColorLight: #fff8ef;
+$warningColorLighter: #fffefc;
+$warningColorText: #b54f01;
+$pendingStatusColor:#ffb1b8;
+$inProgressStatusColor:#00bed2;
+$verifiedStatusColor:#007380;
+$disabledBackgroud: #f3f3f3;
+$qualityColorWithOpacity: #fff3f3;
+$fourthColorWithOpacity: #d9f5f8;
+$caseHistoryStatusBg: #00738033;
+$thirdColorWithoutOpacity: #004650;
+$notification: #4abd7e;
+$pendingAgentReply: #686868;
+$pendingAgentReplyBg: #eee;
+$pendingAgentReplyText: #9d9d9d;
+$rejectedAgentReplyBorder: #cc3363;
+$rejectedReplyTypeColor: #cc336380;
+$rejectedTextAreaReply: #f7f7f7a3;
+$deletedMessagesText: #878787;
+$deletedMessagesBg: #8f8f8f2e;
+$disabledTabs: #68686880;
+$fourthColorOpacity: #00bed210;
+$disabledRewriteReply: #faeaef;
+
+$boxShadow1: #0000001a;
+$boxShadow2: #0046501a;
+
+$disabledText: #a9a9a9;
+$disabledTextDark: #989898;
+
+// Component colors:
+$bgCard: #f2f2f2;
+$boxShadow: #00000029;
+$borderColor1: #d8d8d8;
+$borderColor2: #ddd;
+$inputBorder: rgba(205, 205, 205, .5); // #cdcdcd with 0.5opacity
+$borderColor3: #0073803d;
+$tooltipBackground: #004650d9;
+$menuAlertColor: #29667a;
+
+// Tables
+$tableBg: #0073801a;
+$tableBg2: #2ed8c30d;
+$tableBgError: #dc354521;

@@ -1,0 +1,100 @@
+@import '../../../assets/styles/functions/index';
+@import '../../../assets/styles/variables/index';
+@import '../../../assets/styles/mixins/index';
+
+$generalPath: '../../../assets/styles/base/_generals.scss';
+$formPath: '../../../assets/styles/composers/_form.scss';
+
+.table {
+  composes: table from $generalPath;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-weight: 500;
+  width: 100%;
+
+  .customTh {
+    font-size: remify(16);
+    padding: remify(14) 0 remify(14) remify(12);
+  }
+
+  .smallTh {
+    font-size: remify(16);
+    text-align: center;
+    width: 10rem;
+  }
+
+  tbody {
+    border: remify(1) solid $borderColor2;
+  }
+
+  tr {
+    border-bottom: remify(1) solid $borderColor2;
+  }
+
+  td {
+    padding: remify(10);
+    border: none;
+  }
+
+  .languageExpertLabel {
+    min-width: remify(100);
+  }
+
+  .dateBlock {
+    max-width: remify(100);
+  }
+
+  .sameWorkingHours {
+    cursor: pointer;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $activeColor;
+    }
+  }
+
+  .sameWorkingHoursInactive {
+    color: $borderColor2;
+
+    &:hover {
+      color: $borderColor2;
+      cursor: not-allowed;
+    }
+  }
+
+  .errorSection {
+    color: $errorColor;
+  }
+}
+
+.workingScheduleLabel {
+  text-transform: uppercase;
+  color: $secondaryColor;
+}
+
+.dayCheck {
+  composes: customCheckbox from $formPath;
+  display: inline-block;
+  margin-left: remify(20);
+}
+
+.dayCheckLabel {
+  composes: label from $formPath;
+  margin-top: .24rem;
+  margin-left: remify(6);
+  font-size: remify(16);
+}
+
+.alwaysCheckBox{
+  border-bottom: none !important; 
+  padding-top: 1rem;
+}
+
+.workDay {
+  border: none !important;
+}
+
+.agentScheduleHeader th{
+  height: 3.15rem;
+}
+

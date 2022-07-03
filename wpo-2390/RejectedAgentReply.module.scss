@@ -1,0 +1,132 @@
+@import '../../../../assets/styles/variables/index';
+@import '../../../../assets/styles/functions/index';
+
+$generalPath: '../../../../assets/styles/base/_generals.scss';
+$typographyPath: '../../../../assets/styles/composers/_typography.scss';
+
+.rejectedAgentReply {
+  max-width: 95%;
+  align-self: flex-end;
+  border-radius: remify(5);
+  padding: remify(12);
+  margin-bottom: remify(10);
+  text-align: right;
+  background-color: $rejectBackground;
+  border: remify(1) solid $rejectedAgentReplyBorder;
+
+  .textTranslation {
+    color: $secondaryColor;
+    font-weight: 500;
+  }
+
+  .editable {
+    background-color: $rejectedTextAreaReply;
+    padding: remify(5);
+    overflow: auto;
+    max-width: 100%;
+    width: 100%;
+    color: $secondaryColor;
+    font-weight: 500;
+    border: none;
+    resize: none;
+    border-bottom: remify(2) solid $secondaryColor;
+  }
+
+  .error {
+    border-bottom: remify(2) solid $alertColor;
+  }
+}
+
+.rewriteReplyWrapper {
+  background-color: transparent;
+
+  .replyType {
+    color: $pendingAgentReply;
+  }
+
+  .textTranslation {
+    color: $primaryColor;
+    opacity: .6;
+  }
+}
+
+.textsCopyWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.replyType {
+  color: $rejectedReplyTypeColor;
+  text-transform: uppercase;
+  font-size: remify(14);
+  font-weight: 500;
+}
+
+.texts {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  white-space: pre-line;
+  width: 100%;
+}
+
+.tooltip {
+  white-space: pre-wrap;
+}
+
+.agentReplyText {
+  color: $rejectedAgentReplyBorder;
+  font-style: italic;
+  font-size: remify(14);
+}
+
+.textRejection {
+  composes: textEllipsis from $typographyPath;
+  max-width: remify(345);
+  display: inline-block;
+  font-size: remify(14);
+  font-style: italic;
+  margin-left: .5rem;
+  vertical-align: middle;
+
+  &::before {
+    content: '';
+    width: .25rem;
+    height: .25rem;
+    border-radius: 50%;
+    margin-right: .5rem;
+    display: inline-block;
+    background-color: $alertColor;
+    vertical-align: middle;
+  }
+}
+
+.rewriteReply {
+  font-weight: 600;
+  font-size: remify(13);
+  color: $rejectedAgentReplyBorder;
+  text-transform: uppercase;
+  cursor: pointer;
+  background-color: $disabledRewriteReply;
+}
+
+.disabledRewriteReply {
+  font-weight: 600;
+  font-size: remify(13);
+  color: $disabledTabs;
+  text-transform: uppercase;
+  cursor: not-allowed;
+  background-color: $disabledRewriteReply;
+}
+
+.resendToVerificationBtn {
+  margin-left: auto;
+}
+
+.cancelBtn,
+.resendToVerificationBtn {
+  composes: actionLink from $generalPath;
+  color: $secondaryColor;
+  font-size: remify(14);
+  font-weight: 600;
+}

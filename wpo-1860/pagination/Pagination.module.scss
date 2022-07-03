@@ -1,0 +1,12 @@
+@import '../../../assets/styles/variables/index';
+@import '../../../assets/styles/mixins/index';
+@import '../../../assets/styles/functions/pxToRem';
+
+
+.selectItemsPerPage {
+    color: $primaryColor;
+    border-color: $inputBorder;
+    border-radius: 4px;
+    height: 2.36rem;
+    margin-right: 0.6rem;
+}

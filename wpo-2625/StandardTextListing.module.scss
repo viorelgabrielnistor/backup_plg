@@ -1,0 +1,153 @@
+@import '../../assets/styles/variables/index';
+@import '../../assets/styles/mixins/index';
+@import '../../assets/styles/functions/index';
+
+$generalPath: '../../assets/styles/base/_generals.scss';
+$buttonPath: '../../assets/styles/composers/_buttons.scss';
+$tablePath: '../../assets/styles/composers/_table.scss';
+
+.listStyle {
+  list-style-type: none;
+  padding: 0;
+}
+
+.table {
+  composes: table from $generalPath;
+
+  td {
+    border-bottom-color: $thirdColor;
+    padding: remify(10) remify(20);
+    height: remify(49);
+    vertical-align: middle;
+  }
+
+  th {
+    padding: remify(10) remify(20);
+  }
+
+  .name {
+    font-weight: 500;
+    border-left: 0;
+  }
+
+  .status {
+    color: $secondaryColor;
+
+    &Inactive {
+      color: $alertColor;
+    }
+  }
+}
+
+.editColumnWrapper {
+  composes: editColumnWrapper from $tablePath;
+}
+
+.actionLink {
+  composes: actionLink from $generalPath;
+
+  &Alert {
+    composes: actionLinkAlert from $generalPath;
+  }
+}
+
+.actionButton {
+  margin-left: remify(5);
+}
+
+.button {
+  composes: submitButton from $buttonPath;
+}
+
+.customTable {
+  table-layout: fixed;
+  border-collapse: collapse;
+  height: 100%;
+
+  td {
+    border: remify(1) solid $borderColor2;
+    vertical-align: middle;
+
+    &:first-child {
+      width: 30%;
+      border-left: 0;
+      border-right: 0;
+    }
+
+    &:nth-child(2) {
+      width: 20%;
+    }
+
+    &:last-child {
+      width: 50%;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+
+  tr {
+    &:first-child {
+      td {
+        border-top: 0;
+      }
+    }
+
+    &:last-child {
+      td {
+        border-bottom: 0;
+      }
+    }
+  }
+}
+
+.filterItem {
+  flex-grow: 0;
+}
+
+.standardTextSelect {
+  width: remify(300);
+}
+
+.reorderBtn {
+  composes: cancelButton from $buttonPath;
+  width: remify(300);
+
+  @include desktopMedium {
+    width: remify(150);
+  }
+
+  @include desktopLarge {
+    margin-top: remify(30);
+  }
+}
+
+.inactive {
+  color: $alertColor;
+}
+
+.editButtonsWrapper {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+
+  button:nth-child(2),
+  button:nth-child(3) {
+    margin-right: remify(20);
+
+    &:visited {
+      border-top: 2px solid red;
+    }
+  }
+}
+
+.deleteIcon {
+  cursor: pointer;
+  width: remify(20);
+  height: remify(25);
+  fill: $alertColor;
+  // margin-left:remify(6);
+
+    &:hover {
+        fill: $activeColor
+      }
+}

@@ -1,0 +1,236 @@
+@import '../../assets/styles/custom';
+@import '../../assets/styles/variables';
+@import '../../assets/styles/functions/pxToRem';
+
+$generalPath: '../../assets/styles/base/_generals.scss';
+$formPath: '../../assets/styles/composers/_form.scss';
+$scrollBarPath: '../../assets/styles/composers/_scrollbar.scss';
+$typographyPath: '../../assets/styles/composers/_typography.scss';
+
+.table {
+  composes: table from $generalPath;
+  width: 100%;
+  margin-bottom: 0;
+  border-bottom: remify(1) solid $borderColor2;
+
+  thead,
+  tbody,
+  tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  tbody {
+    display: block;
+    overflow: auto;
+    table-layout: fixed;
+    max-height: calc(100vh - 34.6rem);
+
+    @include desktopSmall {
+      max-height: calc(100vh - 34.9rem);
+    }
+
+    /* stylelint-disable */
+    tr:last-of-type {
+      td {
+        border-bottom: none;
+      }
+    }
+
+    /* stylelint-enable */
+  }
+
+  thead {
+    th {
+      vertical-align: middle;
+      font-size: 1.15rem;
+      height: 3.11em;
+    }
+  }
+
+  th,
+  td {
+    padding: .4rem;
+    vertical-align: middle;
+
+    @include desktopMedium {
+      padding: .2rem;
+    }
+  }
+}
+
+.scrollbar {
+  composes: scrollWrapper from $scrollBarPath;
+}
+
+.rowSelected {
+  td {
+    background-color: $fifthColor;
+  }
+}
+
+.checkbox {
+  composes: customCheckbox from $formPath;
+  width: 1.25rem;
+  height: 1.25rem;
+  justify-content: flex-end;
+
+  input {
+    background-color: $white;
+    position: initial;
+  }
+}
+
+.underline {
+  composes: underline from $generalPath;
+}
+
+.ellipsis {
+  composes: textEllipsis from $typographyPath;
+}
+
+.colCheckbox {
+  width: 2.4rem;
+}
+
+.colTicketId {
+  width: 7rem;
+  word-break: break-all;
+}
+
+.colClient,
+.colProject{
+  width: 13rem;
+
+  @include desktopMedium {
+    width: 7.5rem;
+  }
+
+  @include desktopSmall {
+    width: 8rem;
+  }
+}
+
+.colUser {
+  width: 15rem;
+
+  @include desktopMedium {
+    width: 7.5rem;
+  }
+
+  @include desktopSmall {
+    width: 8rem;
+  }
+}
+
+.colSla {
+  width: 5.5rem;
+}
+
+.colLanguagePair {
+  width: 10rem;
+
+  @include desktopMedium {
+    width: 9rem;
+  }
+}
+
+.colTimeSent {
+  white-space: nowrap;
+  width: 10rem;
+
+  @include desktopMedium {
+    width: 10.8rem;
+  }
+}
+
+.colTimeResponse {
+  white-space: nowrap;
+  width: 10rem;
+
+  @include desktopMedium {
+    width: 10.8rem;
+  }
+}
+
+.qualityCheckIcon {
+  margin-left: .4rem;
+  width: 1.2rem;
+  height: 1.2rem;
+
+  @include desktopMedium {
+    display: none;
+  }
+}
+
+.colStatus {
+  font-weight: 500;
+  width: 10rem;
+
+  &-verificationPending {
+    color: $activeColor;
+  }
+
+  &-verificationInProgress {
+    color: $inProgressStatusColor;
+  }
+
+  &-verified {
+    color: $verifiedStatusColor;
+  }
+
+  &-verificationRejected {
+    color: $alertColor;
+  }
+}
+
+.infoIcon {
+  cursor: pointer;
+  width: remify(16);
+  height: remify(16);
+  fill: $alertColor;
+  vertical-align: text-bottom;
+  margin-left: remify(5);
+}
+
+.tooltip {
+  text-align: left;
+  /* stylelint-disable */
+  font-size: remify(14) !important;
+  padding: remify(8) !important;
+  /* stylelint-enable */
+  box-shadow: 0 remify(3) remify(6) $boxShadow;
+}
+
+.rejectionReason {
+  white-space: pre-wrap;
+}
+
+.colActions {
+  width: 9.7rem;
+  text-align: center;
+}
+
+.colActionsScroll {
+  width: 10.25rem;
+
+  button {
+    margin-right: .5rem;
+  }
+}
+
+.total {
+  color: $secondaryColor;
+  border-top: remify(2) solid $thirdColor;
+  padding: .5rem 0 0 .5rem;
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 500;
+
+  &Value {
+    margin-left: .5rem;
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+}

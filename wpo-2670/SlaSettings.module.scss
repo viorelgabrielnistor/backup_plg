@@ -1,0 +1,63 @@
+@import '../../../assets/styles/variables/index';
+
+$formPath: '../../../assets/styles/composers/_form.scss';
+
+.slaSettingsWrapper {
+  color: $thirdColorWithoutOpacity;
+  font-size: 1.125rem;
+  font-weight: 500;
+
+  .smallSize {
+    width: remify(200);
+  }
+}
+
+.errorSection {
+  color: $errorColor;
+  font-weight: 600;
+}
+
+.workingScheduleLabel {
+  text-transform: uppercase;
+  color: $secondaryColor;
+}
+
+.dayCheckLabel {
+  composes: label from $formPath;
+  margin-top: .24rem;
+  margin-left: remify(6);
+  font-size: remify(16);
+}
+
+.rangeDatePicker{
+  position: relative;
+  top: -1rem;
+  border: 1px solid $borderColor1;
+  border-top:none;
+  padding: 0.3rem;
+
+  .title{
+    padding-bottom: 0.5rem;
+    display:flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+    .dayCheckLabel{
+      padding-right: 12px;;
+    }
+  }
+
+ .setdate {
+  padding: 0.15rem;;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+
+  .datePicker{
+    width: 6rem;
+  }
+ }
+}
+
+
+

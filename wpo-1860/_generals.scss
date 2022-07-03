@@ -1,0 +1,324 @@
+@import '../variables/index';
+@import '../mixins/index';
+@import '../functions/pxToRem';
+
+.mainContainer {
+  padding: remify(20) remify(30) remify(20) remify(90);
+  color: $primaryColor;
+}
+
+.containerBoxed {
+  background: $white;
+  border: remify(1) solid $borderColor2;
+  box-shadow: 0 remify(1) remify(8) remify(1) $boxShadow;
+  border-radius: remify(4);
+}
+
+.subTitleSmallBold {
+  font-size: remify(20);
+  font-weight: 500;
+}
+
+.subTitleBigThin {
+  font-size: remify(24);
+  letter-spacing: remify(.36);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+// TODO: needs to be cleaned -->>
+.cursorPointer {
+  cursor: pointer;
+}
+
+.languagePairComponent {
+  option,
+  select {
+    text-transform: capitalize;
+  }
+}
+
+.spinerCenter {
+  margin-left: 20%;
+}
+
+.noClick {
+  pointer-events: none;
+}
+
+// Table
+.table {
+  color: $primaryColor;
+
+  thead th {
+    background-color: $tableBg;
+    border-bottom: remify(1) solid $secondaryColor;
+    font-size: remify(20);
+    font-weight: 500;
+  }
+
+  td {
+    border: remify(1) solid $borderColor2;
+
+    @include desktopLarge {
+      max-width: remify(200);
+      word-break: break-word;
+    }
+  }
+}
+
+// Links
+.actionLink {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: $secondaryColor;
+  font-size: remify(18);
+  background: none;
+
+  &:hover {
+    color: $activeColor;
+    text-decoration: none;
+  }
+
+  &:disabled {
+    color: $disabledTextDark;
+    cursor: no-drop;
+  }
+}
+
+.actionLinkAlert {
+  color: $alertColor;
+}
+
+// Tooltip
+.tooltip {
+  .tooltip-inner {
+    background-color: $secondaryColor;
+  }
+
+  &.bs-tooltip-top {
+    .arrow::before {
+      border-top-color: $secondaryColor;
+    }
+  }
+
+  &.bs-tooltip-top-start {
+    .arrow::before {
+      border-top-color: $secondaryColor;
+    }
+  }
+
+  &.bs-tooltip-right {
+    .arrow::before {
+      border-right-color: $secondaryColor;
+    }
+  }
+
+  &.bs-tooltip-bottom {
+    .arrow::before {
+      border-bottom-color: $secondaryColor;
+    }
+  }
+
+  &.bs-tooltip-left {
+    .arrow::before {
+      border-left-color: $secondaryColor;
+    }
+  }
+
+  &.header {
+    &.show {
+      opacity: 1;
+    }
+
+    .tooltip-inner {
+      background-color: $tooltipBackground;
+    }
+
+    .arrow::before {
+      border-right-color: transparent;
+      border-bottom-color: $tooltipBackground;
+    }
+  }
+}
+
+.modal-backdrop {
+  background-color: $primaryColor;
+}
+
+.modal-content {
+  padding: remify(50) remify(20) remify(40) remify(20);
+}
+
+.modal-header,
+.modal-footer {
+  border: 0;
+  padding: 0;
+}
+
+// Tabs
+/* stylelint-disable */
+.nav-tabs {
+  border-bottom: remify(1) solid $fourthColor;
+
+  .nav-link {
+    @include fontMix(null, remify(20), uppercase, null, $fourthColor, 500);
+    padding: remify(8) remify(20);
+    letter-spacing: remify(1);
+
+    &:hover {
+      color: $secondaryColor;
+      border-color: $white;
+      border-bottom-color: $fourthColor;
+    }
+
+    &.active {
+      color: $white;
+      border-color: $fourthColor;
+      background-color: $fourthColor;
+
+      &:hover {
+        border-color: $fourthColor;
+      }
+    }
+
+    &.disabled {
+      color: $disabledTabs;
+    }
+
+    @include desktopMedium {
+      padding: remify(6) remify(18);
+      font-size: remify(16);
+    }
+  }
+}
+
+.tab-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.tab-pane {
+  height: 100%;
+}
+/* stylelint-enable */
+
+.w-5 {
+  width: 5%;
+}
+
+.w-8 {
+  width: 8%;
+}
+
+.w-10 {
+  width: 10%;
+}
+
+.w-12 {
+  width: 12%;
+}
+
+.w-13 {
+  width: 13%;
+}
+
+.w-14 {
+  width: 14%;
+}
+
+.w-15 {
+  width: 15%;
+}
+
+.w-16 {
+  width: 16.5%;
+}
+
+.w-19 {
+  width: 19%;
+}
+
+.w-20 {
+  width: 20%;
+}
+
+.toast-poly {
+  padding-left: remify(25);
+  padding-right: remify(25);
+  text-align: center;
+}
+
+.Toastify__toast--success.toast-poly {
+  background: $fourthColor;
+  color: $primaryColor;
+}
+
+.Toastify__toast--error.toast-poly {
+  background: $alertColor;
+  color: $white;
+}
+
+.Toastify__toast--warning.toast-poly {
+  background: $warningColorLighter;
+  border: remify(2) solid $warningColor;
+  color: $primaryColor;
+  padding-left: remify(20);
+
+  &.tab-warning {
+    width: 34rem;
+    margin-left: -7rem;
+  }
+
+  .Toastify__close-button {
+    color: $primaryColor;
+    opacity: 1;
+    position: absolute;
+    top: .2rem;
+    right: .6rem;
+  }
+
+  .Toastify__progress-bar {
+    background-color: $warningColor;
+  }
+}
+// TinyMCE styles
+/* stylelint-disable */
+
+.tox-tinymce-inline .tox-editor-header {
+  border: 0 !important;
+  border-bottom: 1px solid $borderColor1 !important;
+  margin-bottom: 3px !important;
+}
+
+.tox .tox-tbtn {
+  height: 24px !important;
+  margin: 0 !important;
+}
+
+.mce-content-body {
+  height: 100%;
+}
+/* stylelint-enable */
+
+//Pagination
+.page-item {
+  color: $primaryColor;
+  border-color: $inputBorder;
+  border-radius: 4px;
+  min-height: 2.625rem;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pagination .page-item.active > a {
+  background-color: $activeColor;
+  border-color: $activeColor;
+}

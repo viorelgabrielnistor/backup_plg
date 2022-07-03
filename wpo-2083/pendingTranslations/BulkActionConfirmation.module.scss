@@ -1,0 +1,40 @@
+@import '../../assets/styles/variables/index';
+@import '../../assets/styles/functions/index';
+
+$buttonPath: '../../assets/styles/composers/_buttons.scss';
+$scrollBarPath: '../../assets/styles/composers/_scrollbar.scss';
+$formPath: '../../assets/styles/composers/_form.scss';
+
+.backdrop {
+    z-index: 1055;
+}
+
+.modal {
+    z-index: 1060;
+}
+
+.wrapper {
+    min-width: 45rem;
+}
+
+.title {
+    font-size: remify(22);
+    font-weight: 600;
+    color: $secondaryColor;
+}
+
+.textarea {
+    composes: scrollWrapper from $scrollBarPath;
+    composes: textarea from $formPath;
+    width: 100%;
+}
+
+.buttonNo {
+    composes: cancelButton from $buttonPath;
+    width: remify(200);
+}
+
+.buttonYes {
+    composes: submitButton from $buttonPath;
+    width: remify(200);
+}
