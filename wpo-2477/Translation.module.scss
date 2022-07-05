@@ -1,0 +1,136 @@
+@import '../../assets/styles/variables/index';
+@import '../../assets/styles/mixins/index';
+@import '../../assets/styles/functions/index';
+
+$generalPath: '../../assets/styles/base/_generals.scss';
+$buttonsPath: '../../assets/styles/composers/_buttons.scss';
+$textareaPath: '../../assets/styles/composers/_textarea.scss';
+$formPath: '../../assets/styles/composers/_form.scss';
+$typographyPath: '../../assets/styles/composers/_typography.scss';
+
+.translationWrapper {
+  padding: remify(20) remify(30) 0 remify(90);
+}
+
+.containerBoxed {
+  composes: containerBoxed from $generalPath;
+  margin-bottom: remify(20);
+  height: calc(100vh - 13.5rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.translationRow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.translationColumn {
+  width: 49%;
+}
+
+.repliesContainer {
+  position: relative;
+}
+
+.translationInputs {
+  padding: remify(20);
+  align-items: center;
+
+  label {
+    font-weight: 500;
+    font-size: remify(22);
+    margin-right: remify(10);
+
+    @include desktopMedium {
+      font-size: remify(19);
+    }
+  }
+
+  input {
+    width: auto;
+    display: inline-block;
+  }
+}
+
+.ticketNr input {
+  max-width: remify(220);
+}
+
+.ticketUrl {
+  composes: textEllipsis from $typographyPath;
+
+  input {
+    max-width: remify(200);
+  }
+}
+
+.url {
+  text-decoration: underline;
+  color: $secondaryColor;
+  font-size: remify(20);
+
+  @include desktopMedium {
+    font-size: remify(19);
+  }
+}
+
+.textareaContainer {
+  position: relative;
+  flex: 1;
+}
+
+.textareaWrapper {
+  composes: textareaWrapper from $textareaPath;
+  height: 100%;
+  overflow: hidden;
+}
+
+.customTextarea {
+  composes: customTextarea from $textareaPath;
+  padding-right: 0;
+  overflow-y: auto;
+  width: 100%;
+  border: 0;
+  resize: none;
+  outline: none;
+}
+
+.replyTextarea {
+  color: $primaryColor;
+  padding: .5rem remify(20);
+  height: 100%;
+}
+
+.metadataContainer {
+  padding: 1rem .8rem .5rem;
+  // border-top: .0625rem solid $borderColor1;
+  border: .0625rem solid $borderColor1;
+  border-radius:5px;
+}
+
+.metaLabel {
+  font-weight: 500;
+  font-size: remify(14);
+}
+
+.buttonSubmit {
+  composes: submitButton from $buttonsPath;
+}
+
+.buttonQuality {
+  composes: qualityButton from $buttonsPath;
+}
+
+.reassignedLabel {
+  font-size: remify(16);
+  color: $disabledText;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: remify(12) remify(17) 0;
+}
+
+.errorMessage {
+  position: absolute;
+  bottom: 0;
+}
